@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import SearchBox from './SearchBox'
 
 function App() {
 
   return (
     <>
-      <h2>Weather App</h2>
+      <SearchBox />
     </>
   )
 }
