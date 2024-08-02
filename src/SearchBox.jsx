@@ -4,7 +4,16 @@ import "./SearchBox.css"
 import { useState } from 'react';
 
 function SearchBox () {
-    let [city, setCity] = useState("")
+    let [city, setCity] = useState("");
+    const API_URL = "";
+    const API_KEY = "";
+
+    let getWeatherInfo = async () => {
+        let response = await fetch(`${API_URL}?{city}&apiid=${API_KEY}&units=metric)`);
+        let jsonResponse = await response.json();
+        console.log(jsonResponse);
+    };
+
 
     let handleChange = (event) => {
         setCity(event.target.value);
@@ -14,6 +23,7 @@ function SearchBox () {
         event.preventDefault();
         console.log(city);
         setCity("");
+        getWeatherInfo();
     }
 
     return <div className='SearchBox'>
