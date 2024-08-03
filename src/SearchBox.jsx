@@ -12,6 +12,15 @@ function SearchBox () {
         let response = await fetch(`${API_URL}?{city}&apiid=${API_KEY}&units=metric)`);
         let jsonResponse = await response.json();
         console.log(jsonResponse);
+        let result = {
+            temp: jsonResponse.min.temp,
+            temp_min: jsonResponse.min.temp_min,
+            temp_max: jsonResponse.min.temp_max,
+            humidity: jsonResponse.min.humidity,
+            feelsLike: jsonResponse.min.feels_like,
+            weather: jsonResponse.weather[0].description,
+        };
+        console.log(result);
     };
 
 
