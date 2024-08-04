@@ -6,9 +6,9 @@ import { CardActionArea } from '@mui/material';
 import "./InfoBox.css";
 
 
-function InfoBox ( {Info} ) {
-    return <div className="InfoBox"> 
-    <h1>WeatherInfo - {Info.weather}</h1>
+function InfoBox ( {info} ) {
+    return <div className="infoBox"> 
+    <h1>WeatherInfo - {info.weather}</h1>
     <div className='cardContainer'>
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
@@ -20,15 +20,15 @@ function InfoBox ( {Info} ) {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {Info.city}
+            {info.city}
           </Typography>
           <Typography variant="body2" color="text.secondary" component={"span"}>
-            <p>Temperature = {Info.temp}&deg;C</p>
-            <p>Humidity = {Info.humidity}</p>
-            <p>Min Temp = {Info.yempMin}&deg;C</p>
-            <p>Max Temp = {Info.tempMax}&deg;C</p>
-            <p>Feels Like = {Info.feelslike}&deg;C</p>
-            <p>Weather description = {Info.weather}</p>
+            <p>Temperature = {info.temp}&deg;C</p>
+            <p>Humidity = {info.humidity}</p>
+            <p>Min Temp = {info.tempMin}&deg;C</p>
+            <p>Max Temp = {info.tempMax}&deg;C</p>
+            <p>Feels Like = {info.feelslike}&deg;C</p>
+            <p>Weather description = {info.weather}</p>
           </Typography>
         </CardContent>
       </CardActionArea>

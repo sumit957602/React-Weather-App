@@ -4,13 +4,13 @@ import { useState } from 'react';
 
 function WeatherApp () {
     const [weatherInfo, setWeathernfo] = useState({
-        city: '',
-        temp: '',
-        feelsLike: '',
-        tempMin: '',
-        tempMax: '',
-        humidity: '',
-        weather: ''
+        city: 'Delhi',
+        temp: '34',
+        feelslike: '38',
+        tempMin: '37',
+        tempMax: '30',
+        humidity: '60',
+        weather: 'Haze',
     });
 
     let updateInfo = (newInfo) => {

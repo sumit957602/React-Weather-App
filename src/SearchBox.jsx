@@ -5,11 +5,12 @@ import { useState } from 'react';
 
 function SearchBox ({updateInfo}) {
     let [city, setCity] = useState("");
-    const API_URL = "https://api.openweathermap.org/data/2.5/weather";
+    const API_URL = "";
     const API_KEY = "830e2117b322102a175abbb4e68cd7e9";
 
     let getWeatherInfo = async ( ) => {
         let response = await fetch(`${API_URL}?q=${city}&appid=${API_KEY}&units=metric`);
+        console.log(response);
         let jsonResponse = await response.json();
         let result = {
             city: city,
@@ -18,7 +19,7 @@ function SearchBox ({updateInfo}) {
             temp_max: jsonResponse.min.temp_max,
             humidity: jsonResponse.min.humidity,
             feelsLike: jsonResponse.min.feels_like,
-            weather: jsonResponse.weather[0].description,
+            weather: jsonResponse.weather,
         };
         return result;
     };
