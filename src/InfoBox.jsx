@@ -5,12 +5,11 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import "./InfoBox.css";
 
-
 function InfoBox ( {info} ) {
     return <div className="infoBox"> 
-    <h1>WeatherInfo - {info.weather}</h1>
+    <h2>WeatherInfo - {info.weather}</h2>
     <div className='cardContainer'>
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ width: 345 }}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -25,9 +24,9 @@ function InfoBox ( {info} ) {
           <Typography variant="body2" color="text.secondary" component={"span"}>
             <p>Temperature = {info.temp}&deg;C</p>
             <p>Humidity = {info.humidity}</p>
-            <p>Min Temp = {info.tempMin}&deg;C</p>
-            <p>Max Temp = {info.tempMax}&deg;C</p>
-            <p>Feels Like = {info.feelslike}&deg;C</p>
+            <p>Min Temp = {info.temp_min}&deg;C</p>
+            <p>Max Temp = {info.temp_max}&deg;C</p>
+            <p>Feels Like = {info.feelsLike}&deg;C</p>
             <p>Weather description = {info.weather}</p>
           </Typography>
         </CardContent>
