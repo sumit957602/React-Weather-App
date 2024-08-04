@@ -6,9 +6,10 @@ import { CardActionArea } from '@mui/material';
 import "./InfoBox.css";
 
 
-function InfoBox () {
+function InfoBox ( {Info} ) {
     return <div className="InfoBox"> 
     <h1>WeatherInfo - {Info.weather}</h1>
+    <div className='cardContainer'>
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
         <CardMedia
@@ -32,6 +33,7 @@ function InfoBox () {
         </CardContent>
       </CardActionArea>
     </Card>
+    </div>
     </div>
 };
 

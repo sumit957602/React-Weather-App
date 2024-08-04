@@ -3,12 +3,12 @@ import Button from '@mui/material/Button';
 import "./SearchBox.css"
 import { useState } from 'react';
 
-function SearchBox () {
+function SearchBox ({updateInfo}) {
     let [city, setCity] = useState("");
     const API_URL = "https://api.openweathermap.org/data/2.5/weather";
     const API_KEY = "830e2117b322102a175abbb4e68cd7e9";
 
-    let getWeatherInfo = async () => {
+    let getWeatherInfo = async ( ) => {
         let response = await fetch(`${API_URL}?q=${city}&appid=${API_KEY}&units=metric`);
         let jsonResponse = await response.json();
         let result = {
@@ -20,18 +20,21 @@ function SearchBox () {
             feelsLike: jsonResponse.min.feels_like,
             weather: jsonResponse.weather[0].description,
         };
+        return result;
     };
+
 
 
     let handleChange = (evt) => {
         setCity(evt.target.value);
     };
 
-    let handleSubmit = (evt) => {
+    let handleSubmit = async (evt) => {
         evt.preventDefault();
         console.log(city);
         setCity("");
-        getWeatherInfo();
+        let newInfo = await getWeatherInfo();
+        updateInfo(newInfo);
     };
 
     return <div className='SearchBox'>

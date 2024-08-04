@@ -1,15 +1,11 @@
-import { useState, useEffect } from 'react'
 import './App.css'
-import SearchBox from './SearchBox'
-import InfoBox from './InfoBox'
-import { Info } from '@mui/icons-material'
+import WeatherApp from './WeatherApp'
 
 function App() {
 
   return (
     <>
-      <SearchBox />
-      <InfoBox />
+      <WeatherApp />
     </>
   )
 }
